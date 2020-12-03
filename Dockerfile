@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM ubuntu:14.04
 
 RUN apt-get update
 RUN apt-get install software-properties-common -y
@@ -16,11 +16,11 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV HAXE_VERSION 4.0.0
 
-ENV NEKO_VERSION-WITH-HIFEN 2-3-0
+ENV NEKO_VERSION_WITH_HIFEN 2-3-0
 ENV NEKO_VERSION 2.3.0
 
 RUN cd /tmp/
-RUN wget -c https://github.com/HaxeFoundation/neko/releases/download/v${NEKO_VERSION-WITH-HIFEN}/neko-${NEKO_VERSION}-linux64.tar.gz
+RUN wget -c https://github.com/HaxeFoundation/neko/releases/download/v${NEKO_VERSION_WITH_HIFEN}/neko-${NEKO_VERSION}-linux64.tar.gz
 
 RUN tar xvzf neko-${NEKO_VERSION}-linux64.tar.gz
 RUN mkdir -p /usr/lib/neko
